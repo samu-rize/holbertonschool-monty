@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <ctype.h>
-
+#include <stdbool.h>
 /* MACRO */
 #define BUFSIZE 1024
-#define DELIM " \n\t"
+#define DELIM " \n\t$"
 
 /* COMPILING */
 
@@ -52,8 +52,7 @@ typedef struct instruction_s
 
 
 /* GLOBAL VARIABLES */
-
-
+extern char *arg;
 /* ERROR FUNCTION */
 void error_exit_s(const char *message, const char *extra_info, int code);
 void error_exit_d(const char *message, const int extra_info, int code);
@@ -73,6 +72,10 @@ void pall(stack_t **stack, unsigned int line);
 void pop(stack_t **stack, unsigned int line);
 void pint(stack_t **stack, unsigned int line);
 void nop(stack_t **stack, unsigned int line);
+void swap(stack_t **stack, unsigned int line);
+void add(stack_t **stack, unsigned int line);
+
+bool is_number(const char *str);
 
 
 #endif
