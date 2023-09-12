@@ -8,9 +8,9 @@
 void push(stack_t **stack, unsigned int line)
 {
 	(void)line;
-	int n;
+	int value = atoi(arg);
 
-	add_dnodeint(stack, n);
+	add_dnodeint(stack, value);
 
 }
 
